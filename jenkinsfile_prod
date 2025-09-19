@@ -12,8 +12,8 @@ pipeline {
             steps {
                 sshagent (credentials: ['1']) {
                     sh """
-                        ssh -o StrictHostKeyChecking=no ubuntu@<PROD_SERVER_IP> "mkdir -p /home/ubuntu/jenkins/workspace_prod"
-                        scp -o StrictHostKeyChecking=no -r * ubuntu@<PROD_SERVER_IP>:/home/ubuntu/jenkins/workspace_prod/
+                        ssh -o StrictHostKeyChecking=no ubuntu@<172.31.20.234> "mkdir -p /home/ubuntu/jenkins/workspace_prod"
+                        scp -o StrictHostKeyChecking=no -r * ubuntu@<172.31.20.234>:/home/ubuntu/jenkins/workspace_prod/
                     """
                 }
             }
